@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
+    init() {
+        makeTabBarOpaque()
+    }
+    
     var body: some View {
         TabView {
             placeholderItemView("Updates")
@@ -37,12 +42,29 @@ struct MainTabView: View {
                 }
         }
     }
+    // Tabbar Opak hale getiriyorum.
+    private func makeTabBarOpaque() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
 }
 
 extension MainTabView {
     
     private func placeholderItemView(_ title: String) -> some View {
-        Text(title)
+        ScrollView {
+            VStack {
+                ForEach(0..<120) { _ in
+                    Text(title)
+                        .bold()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 120)
+                        .background(Color.green.opacity(0.5))
+                }
+            }
+        }
     }
     
     private enum Tab: String {
