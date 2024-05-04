@@ -11,6 +11,7 @@
 		BEB156282BE5BBB70045885D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB156272BE5BBB70045885D /* Assets.xcassets */; };
 		BEB1562B2BE5BBB70045885D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB1562A2BE5BBB70045885D /* Preview Assets.xcassets */; };
 		BEB156322BE5BE750045885D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156312BE5BE750045885D /* MainTabView.swift */; };
+		BEB156342BE5C65E0045885D /* UpdatesTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156332BE5C65E0045885D /* UpdatesTabScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BEB156272BE5BBB70045885D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEB1562A2BE5BBB70045885D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BEB156312BE5BE750045885D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		BEB156332BE5C65E0045885D /* UpdatesTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesTabScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				BEB156272BE5BBB70045885D /* Assets.xcassets */,
 				BEB156292BE5BBB70045885D /* Preview Content */,
 				BEB156312BE5BE750045885D /* MainTabView.swift */,
+				BEB156332BE5C65E0045885D /* UpdatesTabScreen.swift */,
 			);
 			path = WhatsAppCloneAppSwiftUI;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB156342BE5C65E0045885D /* UpdatesTabScreen.swift in Sources */,
 				BEB156242BE5BBB40045885D /* WhatsAppCloneAppSwiftUIApp.swift in Sources */,
 				BEB156322BE5BE750045885D /* MainTabView.swift in Sources */,
 			);
