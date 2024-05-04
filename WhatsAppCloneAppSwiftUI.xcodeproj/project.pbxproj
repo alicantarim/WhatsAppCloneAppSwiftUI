@@ -21,6 +21,12 @@
 		BEB1564F2BE645B80045885D /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1564E2BE645B80045885D /* SettingsItem.swift */; };
 		BEB156532BE6509E0045885D /* ChatRoomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156522BE6509D0045885D /* ChatRoomScreen.swift */; };
 		BEB156552BE6537E0045885D /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156542BE6537E0045885D /* TextInputArea.swift */; };
+		BEB156572BE65E660045885D /* MessageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156562BE65E660045885D /* MessageListController.swift */; };
+		BEB156592BE662B10045885D /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156582BE662B10045885D /* MessageListView.swift */; };
+		BEB1565C2BE666E40045885D /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1565B2BE666E40045885D /* MessageItem.swift */; };
+		BEB1565E2BE667DB0045885D /* BubbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1565D2BE667DB0045885D /* BubbleTextView.swift */; };
+		BEB156602BE668C10045885D /* BubbleTailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1565F2BE668C10045885D /* BubbleTailView.swift */; };
+		BEB156632BE66B190045885D /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156622BE66B190045885D /* CustomModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,12 @@
 		BEB1564E2BE645B80045885D /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		BEB156522BE6509D0045885D /* ChatRoomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomScreen.swift; sourceTree = "<group>"; };
 		BEB156542BE6537E0045885D /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
+		BEB156562BE65E660045885D /* MessageListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListController.swift; sourceTree = "<group>"; };
+		BEB156582BE662B10045885D /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
+		BEB1565B2BE666E40045885D /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		BEB1565D2BE667DB0045885D /* BubbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextView.swift; sourceTree = "<group>"; };
+		BEB1565F2BE668C10045885D /* BubbleTailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTailView.swift; sourceTree = "<group>"; };
+		BEB156622BE66B190045885D /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,7 @@
 		BEB156222BE5BBB40045885D /* WhatsAppCloneAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEB156612BE66AFA0045885D /* Helpers */,
 				BEB156372BE62A280045885D /* Screens */,
 				BEB156232BE5BBB40045885D /* WhatsAppCloneAppSwiftUIApp.swift */,
 				BEB156272BE5BBB70045885D /* Assets.xcassets */,
@@ -195,6 +208,7 @@
 		BEB156502BE650760045885D /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				BEB1565A2BE666D90045885D /* Models */,
 				BEB156512BE650830045885D /* Views */,
 			);
 			path = Chat;
@@ -205,8 +219,28 @@
 			children = (
 				BEB156522BE6509D0045885D /* ChatRoomScreen.swift */,
 				BEB156542BE6537E0045885D /* TextInputArea.swift */,
+				BEB156562BE65E660045885D /* MessageListController.swift */,
+				BEB156582BE662B10045885D /* MessageListView.swift */,
+				BEB1565D2BE667DB0045885D /* BubbleTextView.swift */,
+				BEB1565F2BE668C10045885D /* BubbleTailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BEB1565A2BE666D90045885D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEB1565B2BE666E40045885D /* MessageItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BEB156612BE66AFA0045885D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156622BE66B190045885D /* CustomModifiers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,12 +317,18 @@
 				BEB156362BE5D3D10045885D /* CallsTabScreen.swift in Sources */,
 				BEB1564A2BE6435C0045885D /* SettingsTabScreen.swift in Sources */,
 				BEB156422BE62B620045885D /* CommunityTabScreen.swift in Sources */,
+				BEB156572BE65E660045885D /* MessageListController.swift in Sources */,
 				BEB156552BE6537E0045885D /* TextInputArea.swift in Sources */,
+				BEB156602BE668C10045885D /* BubbleTailView.swift in Sources */,
 				BEB156452BE6346D0045885D /* ChannelTabScreen.swift in Sources */,
 				BEB156242BE5BBB40045885D /* WhatsAppCloneAppSwiftUIApp.swift in Sources */,
+				BEB156592BE662B10045885D /* MessageListView.swift in Sources */,
 				BEB156532BE6509E0045885D /* ChatRoomScreen.swift in Sources */,
 				BEB1564C2BE644260045885D /* SettingsItemView.swift in Sources */,
+				BEB1565E2BE667DB0045885D /* BubbleTextView.swift in Sources */,
+				BEB1565C2BE666E40045885D /* MessageItem.swift in Sources */,
 				BEB156472BE63E420045885D /* ChannelItemView.swift in Sources */,
+				BEB156632BE66B190045885D /* CustomModifiers.swift in Sources */,
 				BEB156322BE5BE750045885D /* MainTabView.swift in Sources */,
 				BEB1564F2BE645B80045885D /* SettingsItem.swift in Sources */,
 			);
