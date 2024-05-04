@@ -27,6 +27,18 @@ struct MessageItem: Identifiable {
     var backgroundColor: Color {
         return direction == .sent ? .bubbleGreen : .bubbleWhite
     }
+    
+    static let stubmessages: [MessageItem] = [
+        MessageItem(text: "Hi There", type: .text, direction: .sent),
+        MessageItem(text: "Check out this Photo", type: .photo, direction: .received),
+        MessageItem(text: "Play out this video", type: .video, direction: .sent)
+        MessageItem(text: "Play out this video", type: .video, direction: .sent)
+
+    ]
+}
+
+enum MessageType {
+    case text, photo, video, audio
 }
 
 enum MessageDirection {
