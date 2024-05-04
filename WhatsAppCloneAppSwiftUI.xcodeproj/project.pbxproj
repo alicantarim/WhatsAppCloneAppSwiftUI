@@ -12,6 +12,15 @@
 		BEB1562B2BE5BBB70045885D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB1562A2BE5BBB70045885D /* Preview Assets.xcassets */; };
 		BEB156322BE5BE750045885D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156312BE5BE750045885D /* MainTabView.swift */; };
 		BEB156342BE5C65E0045885D /* UpdatesTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156332BE5C65E0045885D /* UpdatesTabScreen.swift */; };
+		BEB156362BE5D3D10045885D /* CallsTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156352BE5D3D10045885D /* CallsTabScreen.swift */; };
+		BEB156422BE62B620045885D /* CommunityTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156412BE62B620045885D /* CommunityTabScreen.swift */; };
+		BEB156452BE6346D0045885D /* ChannelTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156442BE6346D0045885D /* ChannelTabScreen.swift */; };
+		BEB156472BE63E420045885D /* ChannelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156462BE63E420045885D /* ChannelItemView.swift */; };
+		BEB1564A2BE6435C0045885D /* SettingsTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156492BE6435C0045885D /* SettingsTabScreen.swift */; };
+		BEB1564C2BE644260045885D /* SettingsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1564B2BE644260045885D /* SettingsItemView.swift */; };
+		BEB1564F2BE645B80045885D /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1564E2BE645B80045885D /* SettingsItem.swift */; };
+		BEB156532BE6509E0045885D /* ChatRoomScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156522BE6509D0045885D /* ChatRoomScreen.swift */; };
+		BEB156552BE6537E0045885D /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB156542BE6537E0045885D /* TextInputArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +30,15 @@
 		BEB1562A2BE5BBB70045885D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BEB156312BE5BE750045885D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		BEB156332BE5C65E0045885D /* UpdatesTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesTabScreen.swift; sourceTree = "<group>"; };
+		BEB156352BE5D3D10045885D /* CallsTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsTabScreen.swift; sourceTree = "<group>"; };
+		BEB156412BE62B620045885D /* CommunityTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTabScreen.swift; sourceTree = "<group>"; };
+		BEB156442BE6346D0045885D /* ChannelTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTabScreen.swift; sourceTree = "<group>"; };
+		BEB156462BE63E420045885D /* ChannelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItemView.swift; sourceTree = "<group>"; };
+		BEB156492BE6435C0045885D /* SettingsTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabScreen.swift; sourceTree = "<group>"; };
+		BEB1564B2BE644260045885D /* SettingsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemView.swift; sourceTree = "<group>"; };
+		BEB1564E2BE645B80045885D /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		BEB156522BE6509D0045885D /* ChatRoomScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomScreen.swift; sourceTree = "<group>"; };
+		BEB156542BE6537E0045885D /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +71,11 @@
 		BEB156222BE5BBB40045885D /* WhatsAppCloneAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BEB156372BE62A280045885D /* Screens */,
 				BEB156232BE5BBB40045885D /* WhatsAppCloneAppSwiftUIApp.swift */,
 				BEB156272BE5BBB70045885D /* Assets.xcassets */,
 				BEB156292BE5BBB70045885D /* Preview Content */,
 				BEB156312BE5BE750045885D /* MainTabView.swift */,
-				BEB156332BE5C65E0045885D /* UpdatesTabScreen.swift */,
 			);
 			path = WhatsAppCloneAppSwiftUI;
 			sourceTree = "<group>";
@@ -68,6 +86,127 @@
 				BEB1562A2BE5BBB70045885D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BEB156372BE62A280045885D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156502BE650760045885D /* Chat */,
+				BEB1563F2BE62ACD0045885D /* Settings */,
+				BEB1563E2BE62ABD0045885D /* Channel */,
+				BEB1563D2BE62AA10045885D /* Community */,
+				BEB1563B2BE62A910045885D /* Calls */,
+				BEB156382BE62A420045885D /* Updates */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		BEB156382BE62A420045885D /* Updates */ = {
+			isa = PBXGroup;
+			children = (
+				BEB1563A2BE62A750045885D /* Views */,
+			);
+			path = Updates;
+			sourceTree = "<group>";
+		};
+		BEB1563A2BE62A750045885D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156332BE5C65E0045885D /* UpdatesTabScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEB1563B2BE62A910045885D /* Calls */ = {
+			isa = PBXGroup;
+			children = (
+				BEB1563C2BE62A980045885D /* Views */,
+			);
+			path = Calls;
+			sourceTree = "<group>";
+		};
+		BEB1563C2BE62A980045885D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156352BE5D3D10045885D /* CallsTabScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEB1563D2BE62AA10045885D /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156402BE62AEC0045885D /* Views */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		BEB1563E2BE62ABD0045885D /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156432BE634610045885D /* Views */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		BEB1563F2BE62ACD0045885D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BEB1564D2BE645990045885D /* Models */,
+				BEB156482BE643410045885D /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BEB156402BE62AEC0045885D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156412BE62B620045885D /* CommunityTabScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEB156432BE634610045885D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156442BE6346D0045885D /* ChannelTabScreen.swift */,
+				BEB156462BE63E420045885D /* ChannelItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEB156482BE643410045885D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156492BE6435C0045885D /* SettingsTabScreen.swift */,
+				BEB1564B2BE644260045885D /* SettingsItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEB1564D2BE645990045885D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEB1564E2BE645B80045885D /* SettingsItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BEB156502BE650760045885D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156512BE650830045885D /* Views */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		BEB156512BE650830045885D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEB156522BE6509D0045885D /* ChatRoomScreen.swift */,
+				BEB156542BE6537E0045885D /* TextInputArea.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +280,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB156342BE5C65E0045885D /* UpdatesTabScreen.swift in Sources */,
+				BEB156362BE5D3D10045885D /* CallsTabScreen.swift in Sources */,
+				BEB1564A2BE6435C0045885D /* SettingsTabScreen.swift in Sources */,
+				BEB156422BE62B620045885D /* CommunityTabScreen.swift in Sources */,
+				BEB156552BE6537E0045885D /* TextInputArea.swift in Sources */,
+				BEB156452BE6346D0045885D /* ChannelTabScreen.swift in Sources */,
 				BEB156242BE5BBB40045885D /* WhatsAppCloneAppSwiftUIApp.swift in Sources */,
+				BEB156532BE6509E0045885D /* ChatRoomScreen.swift in Sources */,
+				BEB1564C2BE644260045885D /* SettingsItemView.swift in Sources */,
+				BEB156472BE63E420045885D /* ChannelItemView.swift in Sources */,
 				BEB156322BE5BE750045885D /* MainTabView.swift in Sources */,
+				BEB1564F2BE645B80045885D /* SettingsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
