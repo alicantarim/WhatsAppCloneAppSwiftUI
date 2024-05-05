@@ -78,7 +78,14 @@ final class AuthManager: AuthProvider {
     }
     
     func logOut() async throws {
-        
+        do {
+            try Auth.auth().signOut()
+            authState.send(.loggedOut)  //authState uzerinden ekran gecislerini sagladigim icin burada loggedOut gonderiyorum.
+            print("🔐 Successfully logged out")
+        } catch {
+            print("🔐 Failed to logOut current User : \(error.localizedDescription)")
+
+        }
     }
 }
 
@@ -86,8 +93,11 @@ extension AuthManager {
     // Kullaniciyi olustururken bu methodu cagirarark bilgilerini database'e de kayit ediyoruz.
     private func saveUserInfoDatabase(user: UserItem) async throws {
         do {
-            let userDictionary = ["uid" : user.uid, "username" : user.username, "email" : user.email]
-            try await Database.database().reference().child("users").child(user.uid).setValue(userDictionary)
+            //let userDictionary = ["uid" : user.uid, "username" : user.username, "email" : user.email]
+            let userDictionary: [String : Any] = [.uid : user.uid, .username : user.username, .email : user.email]
+
+            //try await Database.database().reference().child("users").child(user.uid).setValue(userDictionary)
+            try await FirebaseConstants.UserRef.child(user.uid).setValue(userDictionary)
         } catch {
             print("🔐 Failed to Save Created user Info to Database: \(error.localizedDescription)")
             throw AuthError.failedToSaveUserInfo(error.localizedDescription)
@@ -96,8 +106,9 @@ extension AuthManager {
     
     private func fetchCurrentUserInfo() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("users").child(currentUid).observe(.value) { [weak self] snapshot in
-            
+        //Database.database().reference().child("users").child(currentUid).observe(.value) { [weak self] snapshot in
+        FirebaseConstants.UserRef.child(currentUid).observe(.value) { [weak self] snapshot in
+
             guard let userDict = snapshot.value as? [String : Any] else { return }
             let loggedInUser = UserItem(dictionary: userDict)
             self?.authState.send(.loggedIn(loggedInUser))
@@ -107,38 +118,4 @@ extension AuthManager {
         }
 
     }
-}
-
-struct UserItem: Identifiable, Hashable, Decodable {
-    let uid: String
-    let username: String
-    let email: String
-    var bio: String? = nil
-    var profileImageUrl: String? = nil
-    
-    var id: String {
-        return uid
-    }
-    
-    var bioUnwrapped: String {
-        return bio ?? "Hey there! I am using WhatsApp"
-    }
-}
-
-extension UserItem {
-    init(dictionary: [String : Any]) {
-        self.uid = dictionary[.uid] as? String ?? ""
-        self.username = dictionary[.username] as? String ?? ""
-        self.email = dictionary[.email] as? String ?? ""
-        self.bio = dictionary[.bio] as? String? ?? nil
-        self.profileImageUrl = dictionary[.profileImageUrl] as? String? ?? nil
-    }
-}
-
-extension String {
-    static let uid = "uid"
-    static let username = "username"
-    static let email = "email"
-    static let bio = "bio"
-    static let profileImageUrl = "profileImageUrl"
 }
