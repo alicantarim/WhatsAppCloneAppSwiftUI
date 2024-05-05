@@ -26,6 +26,7 @@ protocol AuthProvider {
 enum AuthError: Error {
     case accountCreationFailed(_ description: String)
     case failedToSaveUserInfo(_ description: String)
+    case emailLogInFailed(_ description: String)
 }
 
 extension AuthError: LocalizedError {
@@ -35,10 +36,12 @@ extension AuthError: LocalizedError {
             return description
         case .failedToSaveUserInfo(let description):
             return description
+        case .emailLogInFailed(let description):
+            return description
         }
     }
 }
-
+//MARK: - AUTHENTICATION MANAGER
 final class AuthManager: AuthProvider {
     
     private init() {
@@ -48,7 +51,7 @@ final class AuthManager: AuthProvider {
     static let shared: AuthProvider = AuthManager()
     
     var authState = CurrentValueSubject<AuthState, Never>(.pending)
-    
+    //MARK:  Auto Login
     func autoLogin() async {
         if Auth.auth().currentUser == nil {
             authState.send(.loggedOut)
@@ -56,11 +59,19 @@ final class AuthManager: AuthProvider {
             fetchCurrentUserInfo()
         }
     }
-    
+    //MARK:  Login
     func login(with email: String, and password: String) async throws {
-        
+        do {
+            let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
+            fetchCurrentUserInfo()
+            print("🔐 Successfully Signed In \(authResult.user.email ?? "") ")
+        } catch {
+            print("🔐 Failed to Sign Into the Account with: \(email) ")
+            throw AuthError.emailLogInFailed(error.localizedDescription)
+
+        }
     }
-    
+    //MARK:  Create Account
     func createAccount(for username: String, with email: String, and password: String) async throws {
         do {
             // Authentication'a user eklenmesi.
@@ -76,7 +87,7 @@ final class AuthManager: AuthProvider {
             throw AuthError.accountCreationFailed(error.localizedDescription)
         }
     }
-    
+    //MARK:  Logout
     func logOut() async throws {
         do {
             try Auth.auth().signOut()
@@ -88,8 +99,9 @@ final class AuthManager: AuthProvider {
         }
     }
 }
-
+//MARK: - EXTENSION FOR AUTH MANAGER
 extension AuthManager {
+    //MARK: Save User Info Database
     // Kullaniciyi olustururken bu methodu cagirarark bilgilerini database'e de kayit ediyoruz.
     private func saveUserInfoDatabase(user: UserItem) async throws {
         do {
@@ -103,7 +115,7 @@ extension AuthManager {
             throw AuthError.failedToSaveUserInfo(error.localizedDescription)
         }
     }
-    
+    //MARK: Fetch Current User Info
     private func fetchCurrentUserInfo() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
         //Database.database().reference().child("users").child(currentUid).observe(.value) { [weak self] snapshot in

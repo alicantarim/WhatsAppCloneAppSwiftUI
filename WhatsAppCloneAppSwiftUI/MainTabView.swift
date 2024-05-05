@@ -9,7 +9,10 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    init() {
+    private let currenUser: UserItem
+    
+    init(_ currentUser: UserItem) {
+        self.currenUser = currentUser
         makeTabBarOpaque()
         // Audio Slider butonunun degistirilmesi.
         let thumbImage = UIImage(systemName: "circle.fill")
@@ -96,5 +99,5 @@ extension MainTabView {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(.placeholder)
 }
