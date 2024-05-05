@@ -26,6 +26,7 @@ struct ChatRoomScreen: View {
                 leadingNavItems()
                 trailingNavItems()
             }
+            .navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) { // Alt SafeArea ya yaptigim TextInput View ScrollView'dan sonra ekledim.
                 TextInputArea()
             }
