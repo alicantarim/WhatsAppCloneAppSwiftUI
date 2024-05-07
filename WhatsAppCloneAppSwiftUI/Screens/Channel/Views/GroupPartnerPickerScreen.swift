@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddGroupChatPartnersScreen: View {
+struct GroupPartnerPickerScreen: View {
     
     @State private var searchText = ""
     @ObservedObject var viewModel: ChatPartnerPickerViewModel
@@ -52,6 +52,6 @@ struct AddGroupChatPartnersScreen: View {
 
 #Preview {
     NavigationStack {
-        AddGroupChatPartnersScreen(viewModel: ChatPartnerPickerViewModel())
+        GroupPartnerPickerScreen(viewModel: ChatPartnerPickerViewModel())
     }
 }
