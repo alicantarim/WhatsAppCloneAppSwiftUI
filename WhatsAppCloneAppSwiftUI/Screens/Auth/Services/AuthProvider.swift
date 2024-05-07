@@ -128,6 +128,59 @@ extension AuthManager {
         } withCancel: { error in
             print("Failed to get current user info")
         }
-
     }
+}
+
+extension AuthManager {
+    
+    static let testAccounts: [String] = [
+        "demo3@test.com",
+        "demo4@test.com",
+        "demo5@test.com",
+        "demo6@test.com",
+        "demo7@test.com",
+        "demo8@test.com",
+        "dem10@test.com",
+        "demo11@test.com",
+        "demo12@test.com",
+        "demo13@test.com",
+        "demo14@test.com",
+        "demo15@test.com",
+        "demo16@test.com",
+        "demo17@test.com",
+        "demo18@test.com",
+        "demo19@test.com",
+        "demo20@test.com",
+        "demo21@test.com",
+        "demo22@test.com",
+        "demo23@test.com",
+        "demo24@test.com",
+        "demo25@test.com",
+        "demo26@test.com",
+        "demo27@test.com",
+        "demo28@test.com",
+        "demo29@test.com",
+        "demo30@test.com",
+        "demo31@test.com",
+        "demo32@test.com",
+        "demo33@test.com",
+        "demo34@test.com",
+        "demo35@test.com",
+        "demo36@test.com",
+        "demo37@test.com",
+        "demo38@test.com",
+        "demo39@test.com",
+        "demo40@test.com",
+        "demo41@test.com",
+        "demo42@test.com",
+        "demo43@test.com",
+        "demo44@test.com",
+        "demo45@test.com",
+        "demo46@test.com",
+        "demo47@test.com",
+        "demo48@test.com",
+        "demo49@test.com",
+        "demo50@test.com"
+        
+    ]
 }

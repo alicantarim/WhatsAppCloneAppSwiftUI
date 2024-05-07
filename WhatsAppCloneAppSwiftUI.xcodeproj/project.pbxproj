@@ -52,6 +52,7 @@
 		BED8A0292BE831D50026695C /* GroupPartnerPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A0282BE831D50026695C /* GroupPartnerPickerScreen.swift */; };
 		BED8A02B2BE843F10026695C /* selectedChatPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A02A2BE843F10026695C /* selectedChatPartnerView.swift */; };
 		BED8A02D2BE84F890026695C /* NewGroupSetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A02C2BE84F890026695C /* NewGroupSetupScreen.swift */; };
+		BED8A0302BEAB2CB0026695C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A02F2BEAB2CB0026695C /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		BED8A0282BE831D50026695C /* GroupPartnerPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPartnerPickerScreen.swift; sourceTree = "<group>"; };
 		BED8A02A2BE843F10026695C /* selectedChatPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedChatPartnerView.swift; sourceTree = "<group>"; };
 		BED8A02C2BE84F890026695C /* NewGroupSetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupSetupScreen.swift; sourceTree = "<group>"; };
+		BED8A02F2BEAB2CB0026695C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		BEB156222BE5BBB40045885D /* WhatsAppCloneAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				BED8A02E2BEAB2BB0026695C /* Service */,
 				BED8A01E2BE80A120026695C /* Utills */,
 				BEB156612BE66AFA0045885D /* Helpers */,
 				BEB156372BE62A280045885D /* Screens */,
@@ -393,6 +396,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BED8A02E2BEAB2BB0026695C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BED8A02F2BEAB2CB0026695C /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,6 +517,7 @@
 				BEB1565E2BE667DB0045885D /* BubbleTextView.swift in Sources */,
 				BEB1565C2BE666E40045885D /* MessageItem.swift in Sources */,
 				BEB156472BE63E420045885D /* ChannelItemView.swift in Sources */,
+				BED8A0302BEAB2CB0026695C /* UserService.swift in Sources */,
 				BEB156632BE66B190045885D /* CustomModifiers.swift in Sources */,
 				BEB156672BE6C2290045885D /* BubbleAudioView.swift in Sources */,
 				BEB156322BE5BE750045885D /* MainTabView.swift in Sources */,
