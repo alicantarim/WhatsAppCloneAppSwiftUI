@@ -16,15 +16,18 @@ struct GroupPartnerPickerScreen: View {
         List {
             
             if viewModel.showSelectedUsers {
-                Text("Users Selected")
+                //Text("Users Selected")
+                selectedChatPartnerView(users: viewModel.selectedChatPartner) { user in
+                    viewModel.handleItemSelection(user)
+                }
             }
             
             Section {
-                ForEach([UserItem.placeholder]) { item in
+                ForEach(UserItem.placeholders) { item in
                     Button {
                         viewModel.handleItemSelection(item)
                     } label: {
-                        chatPartnerRowView(.placeholder)
+                        chatPartnerRowView(item)
                     }
                 }
             }
@@ -35,10 +38,14 @@ struct GroupPartnerPickerScreen: View {
             placement: .navigationBarDrawer(displayMode: .always),
             prompt: "Search name or number"
         )
+        .toolbar {
+            titleView()
+            trailingNavItem()
+        }
     }
     // ChatPartnerRowView deki gorunume extra olarak Button ekliyorum.
     private func chatPartnerRowView(_ user: UserItem) -> some View {
-        ChatPartnerRowView(user: .placeholder) {
+        ChatPartnerRowView(user: user) {
             Spacer()
             let isSelected = viewModel.isUserSelected(user)
             let imageName = isSelected ? "checkmark.circle.fill" : "circle"
@@ -46,6 +53,36 @@ struct GroupPartnerPickerScreen: View {
             Image(systemName: imageName)
                 .foregroundStyle(foregroundStyle)
                 .imageScale(.large)
+        }
+    }
+}
+
+extension GroupPartnerPickerScreen {
+    @ToolbarContentBuilder
+    private func titleView() -> some ToolbarContent {
+        ToolbarItem(placement: .principal) {
+            VStack {
+                Text("Add Participants")
+                    .bold()
+                
+                let count = viewModel.selectedChatPartner.count
+                let maxCount = ChannelContants.maxGroupParticipants
+                
+                Text("\(count)/\(maxCount)")
+                    .foregroundStyle(.gray)
+                    .font(.footnote)
+            }
+        }
+    }
+    
+    @ToolbarContentBuilder
+    private func trailingNavItem() -> some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            Button("Next") {
+                viewModel.navStack.append(.setupGroupChat)
+            }
+            .bold()
+            .disabled(viewModel.disableNextButton) // Butonu disabled eder.
         }
     }
 }

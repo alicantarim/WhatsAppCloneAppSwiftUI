@@ -20,7 +20,7 @@ struct ChatPartnerPickerScreen: View {
                     //Label(item.tittle, systemImage: item.imageName)
                     HeaderItemView(item: item)
                         .onTapGesture {
-                            viewModel.navStack.append(.addGroupChatMembers)
+                            viewModel.navStack.append(.groupPartnerPicker)
                         }
                 }
                 
@@ -55,11 +55,12 @@ extension ChatPartnerPickerScreen {
     @ViewBuilder
     private func destinationView(for route: ChannelCreationRoute) -> some View {
         switch route {
-        case .addGroupChatMembers:
+        case .groupPartnerPicker:
             //Text("ADD GROUP CHAT PARTNER")
-            AddGroupChatPartnersScreen(viewModel: viewModel)
+            GroupPartnerPickerScreen(viewModel: viewModel)
         case .setupGroupChat:
-            Text("SETUP GROUP CHAT")
+            //Text("SETUP GROUP CHAT")
+            NewGroupSetupScreen(viewModel: viewModel)
         }
     }
 }

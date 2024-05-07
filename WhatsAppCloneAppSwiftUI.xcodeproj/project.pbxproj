@@ -49,7 +49,9 @@
 		BED8A0222BE8209A0026695C /* ChatPartnerPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A0212BE8209A0026695C /* ChatPartnerPickerScreen.swift */; };
 		BED8A0242BE8265F0026695C /* ChatPartnerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A0232BE8265F0026695C /* ChatPartnerRowView.swift */; };
 		BED8A0272BE82E670026695C /* ChatPartnerPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A0262BE82E670026695C /* ChatPartnerPickerViewModel.swift */; };
-		BED8A0292BE831D50026695C /* AddGroupChatPartnersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A0282BE831D50026695C /* AddGroupChatPartnersScreen.swift */; };
+		BED8A0292BE831D50026695C /* GroupPartnerPickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A0282BE831D50026695C /* GroupPartnerPickerScreen.swift */; };
+		BED8A02B2BE843F10026695C /* selectedChatPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A02A2BE843F10026695C /* selectedChatPartnerView.swift */; };
+		BED8A02D2BE84F890026695C /* NewGroupSetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED8A02C2BE84F890026695C /* NewGroupSetupScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +93,9 @@
 		BED8A0212BE8209A0026695C /* ChatPartnerPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPartnerPickerScreen.swift; sourceTree = "<group>"; };
 		BED8A0232BE8265F0026695C /* ChatPartnerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPartnerRowView.swift; sourceTree = "<group>"; };
 		BED8A0262BE82E670026695C /* ChatPartnerPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPartnerPickerViewModel.swift; sourceTree = "<group>"; };
-		BED8A0282BE831D50026695C /* AddGroupChatPartnersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupChatPartnersScreen.swift; sourceTree = "<group>"; };
+		BED8A0282BE831D50026695C /* GroupPartnerPickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPartnerPickerScreen.swift; sourceTree = "<group>"; };
+		BED8A02A2BE843F10026695C /* selectedChatPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectedChatPartnerView.swift; sourceTree = "<group>"; };
+		BED8A02C2BE84F890026695C /* NewGroupSetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupSetupScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,9 +239,11 @@
 			children = (
 				BEB156442BE6346D0045885D /* ChannelTabScreen.swift */,
 				BEB156462BE63E420045885D /* ChannelItemView.swift */,
-				BED8A0282BE831D50026695C /* AddGroupChatPartnersScreen.swift */,
 				BED8A0212BE8209A0026695C /* ChatPartnerPickerScreen.swift */,
+				BED8A0282BE831D50026695C /* GroupPartnerPickerScreen.swift */,
 				BED8A0232BE8265F0026695C /* ChatPartnerRowView.swift */,
+				BED8A02A2BE843F10026695C /* selectedChatPartnerView.swift */,
+				BED8A02C2BE84F890026695C /* NewGroupSetupScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -485,10 +491,12 @@
 				BED8A0172BE800450026695C /* RootScreen.swift in Sources */,
 				BEB156452BE6346D0045885D /* ChannelTabScreen.swift in Sources */,
 				BEB156802BE6DD260045885D /* SignUpScreen.swift in Sources */,
-				BED8A0292BE831D50026695C /* AddGroupChatPartnersScreen.swift in Sources */,
+				BED8A0292BE831D50026695C /* GroupPartnerPickerScreen.swift in Sources */,
 				BEB156242BE5BBB40045885D /* WhatsAppCloneAppSwiftUIApp.swift in Sources */,
 				BED8A0222BE8209A0026695C /* ChatPartnerPickerScreen.swift in Sources */,
+				BED8A02B2BE843F10026695C /* selectedChatPartnerView.swift in Sources */,
 				BEB156652BE69B9C0045885D /* BubbleImageView.swift in Sources */,
+				BED8A02D2BE84F890026695C /* NewGroupSetupScreen.swift in Sources */,
 				BEB156592BE662B10045885D /* MessageListView.swift in Sources */,
 				BEB156782BE6D0000045885D /* LoginScreen.swift in Sources */,
 				BEB156532BE6509E0045885D /* ChatRoomScreen.swift in Sources */,
