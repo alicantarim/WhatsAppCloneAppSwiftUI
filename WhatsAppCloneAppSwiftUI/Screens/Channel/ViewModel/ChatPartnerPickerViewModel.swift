@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 enum ChannelCreationRoute {
     case groupPartnerPicker
@@ -43,10 +44,24 @@ final class ChatPartnerPickerViewModel: ObservableObject {
     
     //MARK: - Public Mehhods
     //Database' deki kullanicilari getirir.
+//    func fetchUsers() async {
+//        do {
+//            let userNode = try await UserService.paginateUsers(lastCursor: lastCursor, pageSize: 5)
+//            self.users.append(contentsOf: userNode.users)
+//            self.lastCursor = userNode.currentCursor
+//            print("lastCursor: \(lastCursor ?? "") \(users.count)")
+//        } catch {
+//            print("💿 Failed to fetch users in ChatPartnerPickerViewModel")
+//        }
+//    }
+    
     func fetchUsers() async {
         do {
             let userNode = try await UserService.paginateUsers(lastCursor: lastCursor, pageSize: 5)
-            self.users.append(contentsOf: userNode.users)
+            var fetchedUsers = userNode.users
+            guard let currenUid = Auth.auth().currentUser?.uid else { return }
+            fetchedUsers = fetchedUsers.filter { $0.uid != currenUid }  // Oturum acmis olan kullaniciyi kaldiracak.
+            self.users.append(contentsOf: fetchedUsers)
             self.lastCursor = userNode.currentCursor
             print("lastCursor: \(lastCursor ?? "") \(users.count)")
         } catch {
